@@ -93,21 +93,25 @@ function CheckGameOver(){
           }
      });
 
-     if(winner!==""){
-          AfterGame.classList.add("active");
-          Result.innerText=`${winner} Winner!`;
-     }
      let boxfill=0;
      GameGrid.forEach((box)=>{
           if(box!==""){
                boxfill++;
           }
      });
-
-     if(boxfill===9){
+     
+     if(winner!==""){
+          AfterGame.classList.add("active");
+          Result.innerText=`${winner} Winner!`;
+     }
+     else if(boxfill===9){
           AfterGame.classList.add("active");
           Result.innerText=`Game Tied!`;
      }
+
+     
+
+     
 }
 
 const NewGameBtn=document.querySelector(".new-game");
